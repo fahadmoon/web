@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,700;1,700&display=swap');
+
+body,
+button {
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --offcanvas-width: 270px;
+    --topNavbarHeight: 0px;
+
+}
+
+.sidebar-nav {
+    width: var(--offcanvas-width);
+    scroll-behavior: unset !important;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-link .right-icon {
+    display: inline-flex;
+}
+
+.sidebar-link[aria-expanded="true"] .right-icon {
+    transform: rotate(180deg);
+}
+
+@media (min-width: 774px) {
+    body {
+        overflow: auto !important;
+    }
+
+    main {
+        margin-left: var(--offcanvas-width);
+    }
+
+    /* this is to remove the backdrop */
+    .offcanvas-backdrop::before {
+        display: none;
+    }
+
+    .sidebar-nav {
+        -webkit-transform: none;
+        transform: none;
+        visibility: visible !important;
+        height: calc(100% - var(--topNavbarHeight));
+        top: var(--topNavbarHeight);
+    }
+}
+
+
+/* navbar */
+.navbar {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    margin: 0;
+    width: 100%;
+}
+
+.nav-link {
+    padding: 11px;
+    color: black !important;
+}
+
+
+.nav-link:hover {
+    border-left: 5px solid #0a58ca;
+    color: #0a58ca !important;
+}
+
+
+
+.active {
+    border-left: 5px solid #0a58ca;
+    color: #0a58ca !important;
+}
+
+.Adminname {
+    display: none;
+}
+
+
+.nameHeader {
+    font-weight: 600;
+    color: #073763;
+}
+
+.nameparagraph {
+    font-weight: bold !important;
+    font-size: large;
+
+}
